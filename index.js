@@ -71,7 +71,7 @@ app.delete("/deletar-filme/:id", (req, res) => {
 app.put("/editar-filme/:id", (req, res) => {
     const id = req.params.id
     const { name, gender, duration, classification } = req.body
-
+    
     const editCommand = "UPDATE filmes_neguinho SET name = ?, gender = ?, duration = ?, classification = ? WHERE id = ?;";
 
     sql.query(editCommand, [name, gender, duration, classification, id], (error) => {

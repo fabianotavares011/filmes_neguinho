@@ -2,10 +2,10 @@ POST http://localhost:3000/novo-filme
 Content-Type: application/json
 
   {
-    "name": "clube da luta",
-    "gender": "ação",
-    "duration": 150,
-    "classification": 18
+    "name": "neguinho",
+    "gender": "neguinho",
+    "duration": 1,
+    "classification": "N"
   }
 
 ###
@@ -16,13 +16,22 @@ GET http://localhost:3000/listar-filmes
 
 DELETE http://localhost:3000/deletar-filme/6
 
+{
+    "id": 108,
+    "name": "neguinho",
+    "duration": "1",
+    "classification": "N",
+    "gender": "neguinho"
+  }
+
 ###
 PUT http://localhost:3000/editar-filme/7
 Content-Type: application/json
 
 {
-    "name": "Homem de ferro",
-    "gender": "ação",
-    "duration": 300, 
-    "classification": 12
-}
+    "id": 108,
+    "name": "neguinho",
+    "duration": "2",
+    "classification": "N",
+    "gender": "neguinho"
+  }

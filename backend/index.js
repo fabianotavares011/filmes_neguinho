@@ -17,7 +17,7 @@ const sql = mysql2.createPool({
 
 
 app.get('/', (req, res) => {
-    res.json('OI')
+    const selectCommand = "SELECT * FROM filmes_neguinho";
 })
 
 app.post('/novo-filme', (req, res) => {
@@ -37,7 +37,7 @@ app.post('/novo-filme', (req, res) => {
     });
 })
 
-app.get('/listar-filmes', (req, res) => {
+app.get('/', (req, res) => {
     const listCommand = "SELECT * FROM filmes_neguinho";
 
     sql.query(listCommand, (error, results) => {

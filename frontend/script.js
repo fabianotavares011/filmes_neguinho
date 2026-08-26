@@ -1,5 +1,5 @@
 async function buscarFilmes() {
-    const resposta = await fetch(" http://localhost:3000")
+    const resposta = await fetch(" http://localhost:3001/list-films")
     const filmes = await resposta.json() 
     const sectionFilmes = document.querySelector(".filmes")
 

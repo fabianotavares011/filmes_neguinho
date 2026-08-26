@@ -3,7 +3,7 @@ import cors from 'cors';
 import mysql2 from "mysql2";
 
 const app = express()
-const port = 3000
+const port = 3001
 
 app.use(express.json());
 app.use(cors())
@@ -15,10 +15,6 @@ const sql = mysql2.createPool({
     database: "alunos_filmes03MB"
 });
 
-
-app.get('/', (req, res) => {
-    const selectCommand = "SELECT * FROM filmes_neguinho";
-})
 
 app.post('/novo-filme', (req, res) => {
     const { name, gender, duration, classification} = req.body
@@ -37,7 +33,7 @@ app.post('/novo-filme', (req, res) => {
     });
 })
 
-app.get('/', (req, res) => {
+app.get('/list-films', (req, res) => {
     const listCommand = "SELECT * FROM filmes_neguinho";
 
     sql.query(listCommand, (error, results) => {

@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(135deg, #18c5d4, #0644b8);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+}
+
+/* CABEÇALHO */
+header {
+    width: 100%;
+    height: 50px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+header a {
+    position: absolute;
+    left: calc(50% - 360px);
+
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* CAIXA DO FORMULÁRIO */
+main {
+    width: 90%;
+    max-width: 500px;
+
+    background: white;
+
+    padding: 40px;
+
+    /* espaço entre o cabeçalho e o formulário */
+    margin-top: 45px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* TÍTULO DO FORMULÁRIO */
+main h2 {
+    text-align: center;
+
+    color: #063b91;
+
+    font-size: 24px;
+
+    margin-bottom: 35px;
+}
+
+/* FORMULÁRIO */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABELS */
+label {
+    color: #333;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    height: 40px;
+
+    border: none;
+    outline: none;
+
+    background: #f1f5f4;
+
+    padding: 0 14px;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    background: #eef3f3;
+
+    box-shadow: 0 0 0 2px rgba(10, 190, 215, 0.25);
+}
+
+/* BOTÃO */
+main > button {
+    width: 100%;
+    height: 42px;
+
+    margin-top: 28px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: linear-gradient(
+        90deg,
+        #063da5,
+        #12c5d8
+    );
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+main > button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(0, 100, 200, 0.3);
+}

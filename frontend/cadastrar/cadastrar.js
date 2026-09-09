@@ -1,32 +1,35 @@
 async function cadastrarFilme() {
-    const title = document.getElementById("title")
+    const title = document.getElementById("name")
     const gender = document.getElementById("gender")
-    const ageLimit = document.getElementById("ageLimit")
+    const ageLimit = document.getElementById("classification")
     const duration = document.getElementById("duration")
 
-    if (title.value === "" || gender.value === "" || ageLimit.value === "" || duration.value === "") {
+    if (title.value === "" || gender.value === "") {
         alert("Preencha todos os campos!")
         return  
     }
 
     const filme = {
-        title: title.value,
+        name: title.value,
         gender: gender.value,
-        ageLimit: ageLimit.valueAsNumber,
-        duration: duration.valueAsNumber
+        duration: duration.valueAsNumber,
+        classification: ageLimit.valueAsNumber
     }
 
-    const resposta = await fetch("https://filmes-backend.vercel.app/create", {
+    const resposta = await fetch("https://filmes-neguinho-xo2h.vercel.app/novo-filme", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
         },
+
         body: JSON.stringify(filme)
+        
     })
 
     const mensagem = await resposta.json()
 
-    alert(mensagem.message)
+    alert(mensagem)
 
     window.location.href = "../index.html"
+
 }

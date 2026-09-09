@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,20 +8,22 @@
 
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
 
-    background: linear-gradient(135deg, #18c5d4, #0644b8);
+    background: linear-gradient(135deg, #0f2a52 0%, #0d6fa8 45%, #12b8c9 100%);
+    background-attachment: fixed;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    padding-top: 20px;
+    padding: 30px 20px 60px;
 }
 
 /* CABEÇALHO */
 header {
     width: 100%;
+    max-width: 1500px;
     height: 50px;
 
     position: relative;
@@ -30,23 +34,52 @@ header {
 }
 
 header h1 {
+    font-family: 'Poppins', sans-serif;
     color: white;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     margin: 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 header a {
     position: absolute;
-    left: calc(50% - 360px);
+    left: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 
     color: white;
     text-decoration: none;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+header a::before {
+    content: "←";
+    font-size: 15px;
 }
 
 header a:hover {
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+/* linha decorativa abaixo do título, igual à outra página */
+header h1::after {
+    content: "";
 }
 
 /* CAIXA DO FORMULÁRIO */
@@ -54,32 +87,45 @@ main {
     width: 90%;
     max-width: 500px;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 
     padding: 40px;
 
-    /* espaço entre o cabeçalho e o formulário */
     margin-top: 45px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 30, 70, 0.25);
 }
 
 /* TÍTULO DO FORMULÁRIO */
 main h2 {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
 
-    color: #063b91;
+    color: #0a2d5c;
 
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 600;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+}
+
+main h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    background: linear-gradient(90deg, #0847a9, #12bfd0);
+    margin: 12px auto 0;
+    border-radius: 10px;
 }
 
 /* FORMULÁRIO */
 form {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 
 form div {
@@ -89,7 +135,8 @@ form div {
 
 /* LABELS */
 label {
-    color: #333;
+    color: #123c78;
+    font-weight: 600;
 
     font-size: 13px;
 
@@ -99,58 +146,82 @@ label {
 /* INPUTS */
 input {
     width: 100%;
-    height: 40px;
+    height: 44px;
 
-    border: none;
+    border: 1.5px solid #e1e8ee;
     outline: none;
+    border-radius: 10px;
 
-    background: #f1f5f4;
+    background: #f4f7f9;
 
     padding: 0 14px;
 
-    color: #555;
+    color: #38536b;
 
-    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+
+    transition: 0.25s ease;
 }
 
 input::placeholder {
-    color: #aaa;
+    color: #a9b7c4;
 }
 
 input:focus {
-    background: #eef3f3;
-
-    box-shadow: 0 0 0 2px rgba(10, 190, 215, 0.25);
+    background: #ffffff;
+    border-color: #1ab9cc;
+    box-shadow: 0 0 0 3px rgba(26, 185, 204, 0.15);
 }
 
-/* BOTÃO */
 main > button {
     width: 100%;
-    height: 42px;
+    height: 46px;
 
     margin-top: 28px;
 
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
 
-    background: linear-gradient(
-        90deg,
-        #063da5,
-        #12c5d8
-    );
+    background: linear-gradient(90deg, #0847a9, #16bfd0);
 
     color: white;
 
-    font-size: 12px;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 
     cursor: pointer;
+    box-shadow: 0 6px 15px rgba(8, 71, 169, 0.25);
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 main > button:hover {
     transform: translateY(-2px);
 
-    box-shadow: 0 5px 15px rgba(0, 100, 200, 0.3);
+    box-shadow: 0 10px 22px rgba(8, 71, 169, 0.35);
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    header {
+        justify-content: flex-start;
+    }
+
+    header h1 {
+        font-size: 22px;
+        margin-left: 90px;
+    }
+
+    header a {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    main {
+        padding: 28px 22px;
+        margin-top: 30px;
+    }
 }
